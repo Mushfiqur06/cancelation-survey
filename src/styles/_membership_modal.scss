@@ -1,0 +1,31 @@
+/*MemberShip Modal Style*/
+.membership-wrapper {
+    display: table;
+    &__icon {
+      display: table-cell;
+      vertical-align: top;
+    }
+    &__info {
+      margin-left: 30px;
+      margin-top: -10px;
+      &__title {
+        font-size: 24px;
+        line-height: 40px;
+        margin: 0;
+      }
+      p {
+        color: $lightBlack;
+        line-height: 30px;
+      }
+      .membership-btns {
+        display: flex;
+        justify-content: start;
+        margin-top: 30px;
+  
+        &__cancel {
+          margin-left: 10px;
+          border: 0;
+        }
+      }
+    }
+  }
