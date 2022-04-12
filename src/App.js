@@ -5,7 +5,7 @@ function Home() {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <h1 onClick={() => setShowModal(true)}>Cancellation Survey</h1>
+      <button style={{margin: '50px'}} type="sumit" className="btn btn-secondary" onClick={() => setShowModal(true)}>Cancel Membership?</button>
 
       {showModal && (
         <CancellationModal

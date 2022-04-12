@@ -25,7 +25,7 @@ export default function CancellationModal({ showModal, modalClosed }) {
           </p>
           <p>We hope you’re staying safe and healthy!</p>
           <div className="membership-btns">
-            <button className="btn btn-primary">50 % OFF For 6 Months</button>
+            <a href="https://wpmudev.com/" target="_blank" rel="noreferrer" className="btn btn-primary">50 % OFF For 6 Months</a>
             <button
               className="btn membership-btns__cancel"
               onClick={() => navigate("/cancellation-survey")}
