@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: $primaryFont;
+    font-size: $body;
+    color: $black;
+    background-color: #f9f9f9;
+    font-weight: $regularFontWeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
