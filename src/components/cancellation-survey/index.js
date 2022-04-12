@@ -34,11 +34,12 @@ export default function CancellationSuvey() {
             </p>
           </div>
           <div className="cancellation__options">
-            <div
+            <label
               className="cancellation__options__info"
               onClick={() =>
                 setSelectCancellationSurvey("recurring-membership")
               }
+              htmlFor="recurring-membership"
             >
               <div
                 className={`${
@@ -50,17 +51,19 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="recurring-membership"
                   name="cancellation_survey"
+                  id="recurring-membership"
                 />{" "}
                 I didn’t realize it was a recurring membership
               </div>
-            </div>
-            <div
+            </label>
+            <label
               className="cancellation__options__info"
               onClick={() =>
                 setSelectCancellationSurvey("found-better-solution")
               }
+              htmlFor="found-better-solution"
             >
               <div
                 className={`${
@@ -72,8 +75,9 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="found-better-solution"
                   name="cancellation_survey"
+                  id="found-better-solution"
                 />{" "}
                 Found a better solution
               </div>
@@ -86,10 +90,11 @@ export default function CancellationSuvey() {
                   </div>
                 </div>
               )}
-            </div>
-            <div
+            </label>
+            <label
               className="cancellation__options__info"
               onClick={() => setSelectCancellationSurvey("too-expensive")}
+              htmlFor="too-expensive"
             >
               <div
                 className={`${
@@ -101,17 +106,19 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="too-expensive"
+                  id="too-expensive"
                   name="cancellation_survey"
                 />{" "}
                 It’s too expensive
               </div>
-            </div>
-            <div
+            </label>
+            <label
               className="cancellation__options__info"
               onClick={() =>
                 setSelectCancellationSurvey("not-working-properly")
               }
+              htmlFor="not-working-properly"
             >
               <div
                 className={`${
@@ -123,7 +130,8 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="not-working-properly"
+                  id="not-working-properly"
                   name="cancellation_survey"
                 />{" "}
                 Bugs, things not working properly
@@ -173,10 +181,11 @@ export default function CancellationSuvey() {
                   </div>
                 </div>
               )}
-            </div>
-            <div
+            </label>
+            <label
               className="cancellation__options__info"
               onClick={() => setSelectCancellationSurvey("single-plugin")}
+              htmlFor="single-plugin"
             >
               <div
                 className={`${
@@ -188,16 +197,18 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="single-plugin"
+                  id="single-plugin"
                   name="cancellation_survey"
                 />{" "}
                 I just want to pay for a single plugin
               </div>
-            </div>
+            </label>
 
-            <div
+            <label
               className="cancellation__options__info"
               onClick={() => setSelectCancellationSurvey("not-using-wordpress")}
+              htmlFor="not-using-wordpress"
             >
               <div
                 className={`${
@@ -209,16 +220,18 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="not-using-wordpress"
+                  id="not-using-wordpress"
                   name="cancellation_survey"
                 />{" "}
                 Not using WordPress anymore
               </div>
-            </div>
+            </label>
 
-            <div
+            <label
               className="cancellation__options__info"
               onClick={() => setSelectCancellationSurvey("other")}
+              htmlFor="other"
             >
               <div
                 className={`${
@@ -230,12 +243,13 @@ export default function CancellationSuvey() {
                 <input
                   className="cancellation__options__info__input"
                   type="radio"
-                  value="one"
+                  value="other"
+                  id="other"
                   name="cancellation_survey"
                 />{" "}
                 Other
               </div>
-            </div>
+            </label>
           </div>
           <div className="cancellation-survey__warning">
             <div className="cancellation-survey__warning__icon">
