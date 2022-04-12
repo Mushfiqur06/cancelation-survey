@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BottomArrowIcon from "../../icons/BottomArrowIcon";
 
-export default function MultipleDropDown() {
+export default function MultipleDropDown({ dropDownList }) {
   const [isOpenList, setIsOpenList] = useState(false);
+  const [checkedState, setCheckedState] = useState(new Array(dropDownList.length).fill(false));
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    setData(dropDownList);
+  }, [dropDownList])
+
+  const handleOnChange = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+  };
 
   return (
     <div
@@ -18,41 +32,29 @@ export default function MultipleDropDown() {
           isOpenList ? setIsOpenList(false) : setIsOpenList(true)
         }
       >
-        <div className="dropdown__wrapper__button__text">Select</div>{" "}
+        <div className="dropdown__wrapper__button__text">
+          {checkedState.filter(Boolean).length
+            ? `${checkedState.filter(Boolean).length} Products Selected`
+            : "Select Products"}
+        </div>{" "}
         <BottomArrowIcon />
       </div>
       {isOpenList && (
         <div className="dropdown__wrapper__lists">
-          <label
-            className="dropdown__wrapper__lists__list"
-            htmlFor="product_one"
-          >
-            <input type="checkbox" id="product_one" /> Product #1
-          </label>
-          <label
-            className="dropdown__wrapper__lists__list"
-            htmlFor="product_two"
-          >
-            <input type="checkbox" id="product_two" /> Product #2
-          </label>
-          <label
-            className="dropdown__wrapper__lists__list"
-            htmlFor="product_three"
-          >
-            <input type="checkbox" id="product_three" /> Product #3
-          </label>
-          <label
-            className="dropdown__wrapper__lists__list"
-            htmlFor="product_four"
-          >
-            <input
-              type="radio"
-              value="product_four"
-              id="product_four"
-              name="product_issue"
-            />{" "}
-            Product #4
-          </label>
+          {data?.map((item, index) => (
+            <label
+              className="dropdown__wrapper__lists__list"
+              htmlFor={item.id}
+            >
+              <input
+                type="checkbox"
+                id={item.id}
+                checked={checkedState[item.id - 1]}
+                onChange={() => handleOnChange(item.id - 1)}
+              />{" "}
+              {item.label}
+            </label>
+          ))}
         </div>
       )}
     </div>

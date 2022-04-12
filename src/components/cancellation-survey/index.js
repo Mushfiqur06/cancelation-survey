@@ -5,11 +5,14 @@ import BlackExclamationIcon from "../../icons/BlackExclamationIcon";
 import ExclamationIcon from "../../icons/ExclamationIcon";
 import LeftArrowIcon from "../../icons/LeftArrowIcon";
 import MultipleDropDown from "../common/MultipleDropDown";
+import {productsIssues} from './../../data/dropdownData'
 
 export default function CancellationSuvey() {
   const navigate = useNavigate();
   const [selectCancellationSurvey, setSelectCancellationSurvey] = useState("");
   const [foundIssueTab, setFoundIssueTab] = useState("one-mejor-problem");
+
+  
   return (
     <div className="cancellation-survey__body">
       <div className="cancellation-survey__container">
@@ -143,7 +146,7 @@ export default function CancellationSuvey() {
                       <p>Which product(s) did you have an issue with?</p>{" "}
                       <BlackExclamationIcon />
                     </div>
-                    <MultipleDropDown />
+                    <MultipleDropDown dropDownList={productsIssues} />
                   </div>
                   <div className="tabs">
                     <p>What was it?</p>
